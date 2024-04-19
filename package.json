@@ -1,0 +1,40 @@
+{
+  "name": "@lambdalf-dev/wweb3-template",
+  "description": "A template to start a fresh Foundry web3 project",
+  "version": "1.0.0",
+  "license": "MIT",
+  "repository": "https://github.com/lambdalf-dev/web3-template.git",
+  "private": false,
+  "author": {
+    "name": "Lambdalf the White",
+    "url": "https://lambdalf.dev"
+  },
+  "scripts": {
+    "clean": "rm -rf cache out",
+    "build": "forge build",
+    "lint": "forge fmt check ./",
+    "test": "forge test",
+    "test:unit": "forge test --mt test_unit_",
+    "test:fuzz": "forge test --mt test_fuzz_",
+    "test:edge": "forge test --mt test_edge_",
+    "test:verbose": "forge test -vvvv",
+    "gas": "forge test --gas-report --isolate",
+    "coverage": "forge coverage --contracts src --report lcov; genhtml lcov.info --branch-coverage --output-directory coverage"
+  },
+  "dependencies": {
+    "@lambdalf-dev/ethereum-contracts": "2.1.0"
+  },
+  "devDependencies": {
+    "ds-test": "https://github.com/dapphub/ds-test.git",
+    "forge-std": "github:foundry-rs/forge-std#v1.7.5"
+  },
+  "keywords": [
+    "blockchain",
+    "ethereum",
+    "forge",
+    "foundry",
+    "smart-contracts",
+    "solidity",
+    "template"
+  ]
+}
