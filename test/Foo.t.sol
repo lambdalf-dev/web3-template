@@ -5,7 +5,7 @@ pragma solidity 0.8.25;
 import { console2 } from "forge-std/console2.sol";
 import { TestHelper } from "./TestHelper.sol";
 
-import { Foo } from "../src/Foo.sol";
+import { Foo } from "../contracts/Foo.sol";
 
 contract Constants is TestHelper {
   uint256 public constant TARGET_INDEX = 3;

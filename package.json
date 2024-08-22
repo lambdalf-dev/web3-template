@@ -19,10 +19,10 @@
     "test:edge": "forge test --mt test_edge_",
     "test:verbose": "forge test -vvvv",
     "gas": "forge test --gas-report --isolate",
-    "coverage": "forge coverage --contracts src --report lcov; genhtml lcov.info --branch-coverage --output-directory coverage"
+    "coverage": "forge coverage --contracts contracts --report lcov; genhtml lcov.info --branch-coverage --output-directory coverage"
   },
   "dependencies": {
-    "@lambdalf-dev/ethereum-contracts": "2.1.0"
+    "@lambdalf-dev/ethereum-contracts": "3.0.0"
   },
   "devDependencies": {
     "ds-test": "https://github.com/dapphub/ds-test.git",
