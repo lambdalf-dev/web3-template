@@ -22,7 +22,7 @@
     "coverage": "forge coverage --contracts contracts --report lcov; genhtml lcov.info --branch-coverage --output-directory coverage"
   },
   "dependencies": {
-    "@lambdalf-dev/ethereum-contracts": "3.0.0"
+    "@lambdalf-dev/ethereum-contracts": "3.2.0"
   },
   "devDependencies": {
     "ds-test": "https://github.com/dapphub/ds-test.git",

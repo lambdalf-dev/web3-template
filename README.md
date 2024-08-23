@@ -51,8 +51,7 @@ This template comes with a set of preconfigured tasks. You can find them in `pac
 
 ## Installation
 
-Foundry typically uses git submodules to manage dependencies, but this template uses Node.js packages because
-[submodules don't scale](https://twitter.com/PaulRBerg/status/1736695487057531328).
+Foundry typically uses git submodules to manage dependencies, but this template uses Node.js packages instead.
 
 This is how to install dependencies:
 
@@ -69,6 +68,15 @@ accessible via the `vm` property. If you would like to view the logs in the term
 and use [console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog).
 
 This template comes with an example test contract [Foo.t.sol](./test/Foo.t.sol)
+
+## Prewritten contract
+
+This template comes with a prebuilt NFT contract featuring:
+
+- a whitelisted free claim
+- a whitelisted private sale with its own price
+- a public sale with its own price and a general transaction limit
+- a reserve for airdrop by the team
 
 ## Usage
 
