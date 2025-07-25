@@ -16,12 +16,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": [
-		"curl -L https://foundry.paradigm.xyz | bash",
-		"source /home/node/.bashrc",
-		"foundryup",
-		"forge soldeer install"
-	],
+	"postCreateCommand": "bash -c 'curl -L https://foundry.paradigm.xyz | bash && export PATH=\"$HOME/.foundry/bin:$PATH\" && foundryup && forge soldeer install'",
 
 	// Configure tool-specific properties.
 	// "customizations": {},
