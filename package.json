@@ -29,5 +29,6 @@
     "smart-contracts",
     "solidity",
     "template"
-  ]
+  ],
+  "packageManager": "soldeer"
 }
