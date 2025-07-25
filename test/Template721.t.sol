@@ -8,22 +8,22 @@ import { ITemplate } from "../contracts/ITemplate.sol";
 import { Constants } from "./Constants.sol";
 import { TestHelper } from "./TestHelper.sol";
 
-import { IArrays } from "@lambdalf-dev/interfaces/IArrays.sol";
-import { IWhitelist } from "@lambdalf-dev/interfaces/IWhitelist.sol";
-import { IERC721Receiver } from "@lambdalf-dev/interfaces/IERC721Receiver.sol";
-import { IERC721 } from "@lambdalf-dev/interfaces/IERC721.sol";
-import { IERC721Enumerable } from "@lambdalf-dev/interfaces/IERC721Enumerable.sol";
-import { IERC721Metadata } from "@lambdalf-dev/interfaces/IERC721Metadata.sol";
-import { IERC173 } from "@lambdalf-dev/interfaces/IERC173.sol";
-import { IERC165 } from "@lambdalf-dev/interfaces/IERC165.sol";
-import { IERC2981 } from "@lambdalf-dev/interfaces/IERC2981.sol";
+import { IArrays } from "@lambdalf-dev/src/interfaces/IArrays.sol";
+import { IWhitelist } from "@lambdalf-dev/src/interfaces/IWhitelist.sol";
+import { IERC721Receiver } from "@lambdalf-dev/src/interfaces/IERC721Receiver.sol";
+import { IERC721 } from "@lambdalf-dev/src/interfaces/IERC721.sol";
+import { IERC721Enumerable } from "@lambdalf-dev/src/interfaces/IERC721Enumerable.sol";
+import { IERC721Metadata } from "@lambdalf-dev/src/interfaces/IERC721Metadata.sol";
+import { IERC173 } from "@lambdalf-dev/src/interfaces/IERC173.sol";
+import { IERC165 } from "@lambdalf-dev/src/interfaces/IERC165.sol";
+import { IERC2981 } from "@lambdalf-dev/src/interfaces/IERC2981.sol";
 import { LibString } from "solady/src/utils/LibString.sol";
 
-import { IERC173Events } from "@lambdalf-dev/mocks/events/IERC173Events.sol";
-import { IERC721Events } from "@lambdalf-dev/mocks/events/IERC721Events.sol";
-import { Mock_Invalid_Eth_Receiver } from "@lambdalf-dev/mocks/external/Mock_Invalid_Eth_Receiver.sol";
-import { Mock_NonERC721Receiver } from "@lambdalf-dev/mocks/external/Mock_NonERC721Receiver.sol";
-import { Mock_ERC721Receiver } from "@lambdalf-dev/mocks/external/Mock_ERC721Receiver.sol";
+import { IERC173Events } from "@lambdalf-dev/src/mocks/events/IERC173Events.sol";
+import { IERC721Events } from "@lambdalf-dev/src/mocks/events/IERC721Events.sol";
+import { Mock_Invalid_Eth_Receiver } from "@lambdalf-dev/src/mocks/external/Mock_Invalid_Eth_Receiver.sol";
+import { Mock_NonERC721Receiver } from "@lambdalf-dev/src/mocks/external/Mock_NonERC721Receiver.sol";
+import { Mock_ERC721Receiver } from "@lambdalf-dev/src/mocks/external/Mock_ERC721Receiver.sol";
 
 contract Deployed is TestHelper, Constants, ITemplate, IERC173Events, IERC721Events {
   bytes4[] public INTERFACES = [
@@ -761,6 +761,7 @@ contract Unit_SetContractState is Deployed {
     assertEq(uint8(testContract.contractState()), uint8(Template721.ContractState.PAUSED), "invalid state");
   }
 
+  /// forge-config: default.allow_internal_expect_revert = true
   function test_unit_setContractState_revert_when_new_state_is_invalid() public {
     uint8 newState = uint8(Template721.ContractState.PUBLIC_SALE) + 1;
     vm.expectRevert();

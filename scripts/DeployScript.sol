@@ -1,8 +1,8 @@
 pragma solidity 0.8.25;
 
 import { Template721 } from "./../contracts/Template721.sol";
-import { Script } from "forge-std/Script.sol";
-import { console2 } from "forge-std/console2.sol";
+import { Script } from "forge-std/src/Script.sol";
+import { console2 } from "forge-std/src/console2.sol";
 
 contract DeployScript is Script {
   function run() external {

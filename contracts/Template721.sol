@@ -5,19 +5,19 @@
  */
 pragma solidity >=0.8.4 <0.9.0;
 
-import { IArrays } from "@lambdalf-dev/interfaces/IArrays.sol";
-import { IERC721 } from "@lambdalf-dev/interfaces/IERC721.sol";
-import { IERC721Enumerable } from "@lambdalf-dev/interfaces/IERC721Enumerable.sol";
-import { IERC721Metadata } from "@lambdalf-dev/interfaces/IERC721Metadata.sol";
-import { IERC173 } from "@lambdalf-dev/interfaces/IERC173.sol";
-import { IERC165 } from "@lambdalf-dev/interfaces/IERC165.sol";
-import { IERC2981 } from "@lambdalf-dev/interfaces/IERC2981.sol";
+import { IArrays } from "@lambdalf-dev/src/interfaces/IArrays.sol";
+import { IERC721 } from "@lambdalf-dev/src/interfaces/IERC721.sol";
+import { IERC721Enumerable } from "@lambdalf-dev/src/interfaces/IERC721Enumerable.sol";
+import { IERC721Metadata } from "@lambdalf-dev/src/interfaces/IERC721Metadata.sol";
+import { IERC173 } from "@lambdalf-dev/src/interfaces/IERC173.sol";
+import { IERC165 } from "@lambdalf-dev/src/interfaces/IERC165.sol";
+import { IERC2981 } from "@lambdalf-dev/src/interfaces/IERC2981.sol";
 import { ITemplate } from "./ITemplate.sol";
 
-import { ERC721Batch } from "@lambdalf-dev/tokens/ERC721/ERC721Batch.sol";
-import { ERC173 } from "@lambdalf-dev/utils/ERC173.sol";
-import { ERC2981 } from "@lambdalf-dev/utils/ERC2981.sol";
-import { Whitelist } from "@lambdalf-dev/utils/Whitelist.sol";
+import { ERC721Batch } from "@lambdalf-dev/src/tokens/ERC721/ERC721Batch.sol";
+import { ERC173 } from "@lambdalf-dev/src/utils/ERC173.sol";
+import { ERC2981 } from "@lambdalf-dev/src/utils/ERC2981.sol";
+import { Whitelist } from "@lambdalf-dev/src/utils/Whitelist.sol";
 
 contract Template721 is IERC165, ERC721Batch, ERC173, ERC2981, Whitelist, IArrays, ITemplate {
   // **************************************

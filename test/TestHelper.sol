@@ -2,7 +2,7 @@
 
 pragma solidity >=0.8.4 <0.9.0;
 
-import { Test } from "forge-std/Test.sol";
+import { Test } from "forge-std/src/Test.sol";
 
 contract Accounts is Test {
   // Default token owner

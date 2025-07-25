@@ -36,8 +36,7 @@ For example, if you're interested in exploring Foundry in more detail, you shoul
 
 ### Default Settings
 
-This template comes with a set of sensible default configurations for you to use. These defaults can be found in the
-following files:
+This template comes with a set of sensible default configurations for you to use. These defaults can be found in the following files:
 
 ```text
 ├── .gitignore
@@ -47,31 +46,29 @@ following files:
 
 ### Preconfigured Tasks
 
-This template comes with a set of preconfigured tasks. You can find them in `package.json`.
+This template comes with a set of preconfigured tasks. You can find them in [`package.json`](./package.json).
 
 ## Installation
 
-Foundry typically uses git submodules to manage dependencies, but this template uses Node.js packages instead.
+This template is developped in a container so you don't need to have any tools on your computer besides your text editor. Just open the project in the container and you're ready to go.
 
-This is how to install dependencies:
+If you prefer not to use the container, you can install the dependencies as follow:
 
-1. Install the dependency using your preferred package manager, e.g. `yarn install dependency-name`
-   - Use this syntax to install from GitHub: `yarn install github:username/repo-name`
-2. Add a remapping for the dependency in [remappings.txt](./remappings.txt), e.g.
-   `dependency-name=node_modules/dependency-name`
+1. Install [Foundry](https://book.getfoundry.sh/) with 
+```bash
+curl -L https://foundry.paradigm.xyz | bash
+foundryup
+```
+2. Install the dependencies with `forge soldeer install`
 
 ## Writing Tests
 
-To write a new test contract, you start by importing `Test` from `forge-std`, and then you inherit it in your test
-contract. Forge Std comes with a pre-instantiated [cheatcodes](https://book.getfoundry.sh/cheatcodes/) environment
-accessible via the `vm` property. If you would like to view the logs in the terminal output, you can add the `-vvv` flag
-and use [console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog).
-
-This template comes with an example test contract [Foo.t.sol](./test/Foo.t.sol)
+To write a new test contract, you start by importing `Test` from `forge-std`, and then you inherit it in your test contract. Forge Std comes with a pre-instantiated [cheatcodes](https://book.getfoundry.sh/cheatcodes/) environment accessible via the `vm` property. If you would like to view the logs in the terminal output, you can add the `-vvvv` flag and use [console.log](https://book.getfoundry.sh/faq?highlight=console.log#how-do-i-use-consolelog).
+This template comes with a [TestHelper.sol](./test/TestHelper.sol) that you can import in your test with useful constants and predefined users.
 
 ## Prewritten contract
 
-This template comes with a prebuilt NFT contract featuring:
+This template comes with a [prebuilt NFT contract](./contracts/Template721.sol) featuring:
 
 - a whitelisted free claim
 - a whitelisted private sale with its own price
